@@ -7,7 +7,9 @@
 <body>
     <div class="container">
         <h1>The following words ARE anagrams:</h1>
-        <h4>{{ results }}</h4>
+        {% for item in results %}
+            <h4>{{ item }}</h4>
+        {% endfor %}
     </div>
 </body>
 </html>

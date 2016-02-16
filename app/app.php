@@ -24,10 +24,9 @@
     //     return $app['twig']->render('form.html.twig', array('all_potential' => AnagramChecker::getAll()));
     // });
 
-    $app->get("/anagrams", function() use($app) {
-        $my_AnagramChecker = new AnagramChecker($_GET['anagraminput'],$_GET['anagramcandidate']);
-        $my_AnagramChecker->save();
-        $anagram = $my_AnagramChecker->checkAnagram($_GET['anagraminput'],$_GET['anagramcandidate']);
+    $app->post("/anagrams", function() use($app) {
+        $my_AnagramChecker = new AnagramChecker;
+        $anagram = $my_AnagramChecker->checkAnagram($_POST['anagram_input'],$_POST['anagram_potential']);
         return $app['twig']->render('anagrams_checked.html.twig', array('results' => $anagram));
     });
 

@@ -7,22 +7,24 @@
 <body>
     <div class='container'>
         <h1>Anagram Checker</h1>
-        <p>Type a word in on the left blah blah blah</p>
-        <form action='/anagrams' method=''>
+        <h2>Type a word into the 'Root Word' input</h2>
+
+        <form action='/anagrams' method='post'>
             <div class='form-group'>
-              <label for='anagraminput'>Word:</label>
-              <input id='anagraminput' name='anagraminput' class='form-control' type='text'>
+              <label for='anagram_input'>Root Word:</label>
+              <input id='anagram_input' name='anagram_input' class='form-control' type='text'>
             </div>
             <div class='form-group'>
-                <label for='anagramcandidate'>Word:</label>
-                <input id='anagramcandidate' name='anagramcandidate' class='form-control' type='text'>
+                <h3>Then type multiple words into the second input, separating each by a space.</h3>
+                <label for='anagram_potential'>Words to check for anagram:</label>
+                <input id='anagram_potential' name='anagram_potential' class='form-control' type='text'>
                 <!-- <ul>
                     {% for potential in all_potential %}
                         <li>{{ potential.getPotential }}</li>
                     {% endfor %}
                 </ul> -->
             </div>
-            <button type='submit' class='btn-success'>Translate</button>
+            <button type='submit' class='btn-success'>Which words are an anagram?</button>
         </form>
         <!-- <form action='/anagrams'>
             <button type='submit'>Check!</button>

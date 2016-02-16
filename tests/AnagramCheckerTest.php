@@ -5,20 +5,6 @@ require_once "src/AnagramChecker.php";
 class AnagramCheckerTest extends PHPUnit_Framework_TestCase
 {
 
-    // function test_checkAnagram_sameLength()
-    // {
-    //     //Arrange
-    //     $test_AnagramChecker = new AnagramChecker;
-    //     $inputOne = "beard";
-    //     $inputTwo = "apple";
-    //
-    //     //Act
-    //     $result = $test_AnagramChecker->checkAnagram($inputOne, $inputTwo);
-    //
-    //     //Assert
-    //     $this->assertEquals(true, $result);
-    // }
-
     function test_checkAnagram_differentLength()
     {
         //Arrange
@@ -30,8 +16,9 @@ class AnagramCheckerTest extends PHPUnit_Framework_TestCase
         $result = $test_AnagramChecker->checkAnagram($inputOne, $inputTwo);
 
         //Assert
-        $this->assertEquals("Sorry, not anagrams!", $result);
+        $this->assertEquals(array(), $result);
     }
+
     function test_checkAnagram_isAnagram()
     {
         //Arrange
@@ -43,7 +30,18 @@ class AnagramCheckerTest extends PHPUnit_Framework_TestCase
         $result = $test_AnagramChecker->checkAnagram($inputOne, $inputTwo);
 
         //Assert
-        $this->assertEquals("They are anagrams!", $result);
+        $this->assertEquals(array("bread"), $result);
+    }
+
+    function test_checkAnagram_multipleWords()
+    {
+        $test_AnagramChecker = new AnagramChecker;
+        $inputOne = "beard";
+        $inputTwo = "bread list cat bared";
+
+        $result = $test_AnagramChecker->checkAnagram($inputOne, $inputTwo);
+
+        $this->assertEquals(array("bread", "bared"), $result);
     }
 }
 

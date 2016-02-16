@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Is it an Anagram?</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Anagram Checker</h1>
+        <p>Type a word in on the left blah blah blah</p>
+        <form action='/anagrams' method=''>
+            <div class='form-group'>
+              <label for='anagraminput'>Word:</label>
+              <input id='anagraminput' name='anagraminput' class='form-control' type='text'>
+            </div>
+            <div class='form-group'>
+                <label for='anagramcandidate'>Word:</label>
+                <input id='anagramcandidate' name='anagramcandidate' class='form-control' type='text'>
+                <!-- <ul>
+                    {% for potential in all_potential %}
+                        <li>{{ potential.getPotential }}</li>
+                    {% endfor %}
+                </ul> -->
+            </div>
+            <button type='submit' class='btn-success'>Translate</button>
+        </form>
+        <!-- <form action='/anagrams'>
+            <button type='submit'>Check!</button>
+        </form> -->
+    </div>
+</body>
+</html>
